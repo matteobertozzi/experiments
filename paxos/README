@@ -1,0 +1,16 @@
+# Build with
+./build.sh
+
+# run paxos servers
+./paxos-server
+./paxos-server 1
+./paxos-server 1 2
+
+# run paxos client
+./paxos-client 127.0.0.1 8081 set 1
+./paxos-client 127.0.0.1 8082 set 2
+./paxos-client 127.0.0.1 8081 set 3
+
+./paxos-client 127.0.0.1 8081 get
+./paxos-client 127.0.0.1 8082 get
+
